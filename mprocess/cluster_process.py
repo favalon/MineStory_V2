@@ -13,7 +13,7 @@ def select_movies_plot(movies_plot_pool, c_role):
     return movies_plot
 
 
-def process(movies_plot_pool, c_role, fp=None, n_clusters=None, save=False):
+def process(movies_plot_pool, c_role, fp=None, n_clusters=None, min_threshold=None, plot_flag=None, save=False):
     if not os.path.isdir(fp) and save:
         print("cluster_process save path wrong")
         return
@@ -24,7 +24,8 @@ def process(movies_plot_pool, c_role, fp=None, n_clusters=None, save=False):
         for j, status in enumerate(selected_statues):
             movies_plot = select_movies_plot(movies_plot_pool, c_role)
             status_cluster, edc_dis = ChooseCluster.cluster_status(movies_plot, c_role, status,
-                                                                   n_clusters=n_clusters[j], cluster='k-mean')
+                                                                   n_clusters=n_clusters[j], min_threshold=n_clusters[j],
+                                                                   cluster='k-mean', plot_flag=plot_flag)
 
             statuses_cluster[status] = status_cluster
 

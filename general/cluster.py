@@ -6,14 +6,14 @@ from pathlib import Path
 
 class ChooseCluster:
     @staticmethod
-    def cluster_status(movies_plot, c_role, status, min_threshold=10, n_clusters=25, cluster='k-mean'):
+    def cluster_status(movies_plot, c_role, status, min_threshold=10, n_clusters=25, cluster='k-mean', plot_flag=None):
         if cluster == 'k-mean':
             status_cluster, edc_dis = ChooseCluster.\
-                cluster_k_mean(movies_plot, c_role, status, min_threshold=min_threshold, n_clusters=n_clusters)
+                cluster_k_mean(movies_plot, c_role, status, min_threshold=min_threshold, n_clusters=n_clusters, plot_flag=plot_flag)
             return status_cluster, edc_dis
 
     @staticmethod
-    def cluster_k_mean(movies_plot, c_role, status, min_threshold=10, n_clusters=25):
+    def cluster_k_mean(movies_plot, c_role, status, min_threshold=8, n_clusters=20, plot_flag=None):
         # find target cluster number
 
         status_cluster = {}
@@ -45,6 +45,9 @@ class ChooseCluster:
                     # status_cluster[labels[i]].update_average_cluster(centroids[labels[i]])
                 else:
                     status_cluster[labels[i]].update_cluster(movie_status[c_i][status], p_id)
+        if plot_flag == 'cluster_result':
+            for cluster_key in status_cluster.keys():
+                status_cluster[labels[cluster_key]].cluster_plot(c_role, status)
         return status_cluster, min_threshold
 
 
@@ -88,7 +91,7 @@ class Cluster:
                     .format(cluster_id=self.project_ids[0], status_index=status_index))
 
         plt.clf()
-        plt.plot(x, self.cluster, c=np.random.rand(3, ), marker=next(marker))
+        plt.plot(x, self.cluster, c=np.random.rand(3, ))
         plt.title('Cluster ID:{cluster_id}, Status:{status_index} Representation Plot, '
                   '{movie_num} Movies in this Cluster'
                   .format(cluster_id=self.project_ids[0], status_index=status_index, movie_num=len(self.project_ids)))

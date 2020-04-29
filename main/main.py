@@ -1,8 +1,7 @@
 import os
 from datetime import date
-from transitions import Machine
 from pathlib import Path
-from extra.hd5f_data_preparation import save_hd5f
+from extra.hd5f_data_preparation import main as save_hd5f
 from general.save_load import SaveBasic, LoadBasic
 from general import tools
 from mprocess.filter_process import process as filter_process
@@ -24,6 +23,7 @@ class MineStory:
 
     char_roles_index = {"MainCharacter": 0, "Supporter": 1, "Opposites": 2}
     CLUSTER_NUM = [[25, 15, 10, 10, 5], [15, 8, 8, 8, 8], [5, 5, 5, 5, 5]]
+    MIN_THRESHOLD = [[3, 3, 3, 3, 3], [5, 5, 5, 5, 5], [5, 5, 5, 5, 5]]
 
     def __init__(self, data_url=None, data_path=None):
         self.data_url = data_url
@@ -52,19 +52,18 @@ class MineStory:
             SaveBasic.save_basic(self.filtered_projects, 'filtered_projects_data',
                                  path=self.data_fp, called='filter_project')
 
-    def reshape_project(self, save=False, use_load=False, hdf5=False):
+    def reshape_project(self, sample_num=15, save=False, use_load=False, hdf5=False):
         if use_load:
             self.filtered_projects = LoadBasic.load_basic('filtered_projects_data',
                                                           path=self.data_fp, called='reshape_project')
 
-        self.prepared_projects, self.projects_by_id = prepare_process(self.filtered_projects, downsample=11)
+        self.prepared_projects, self.projects_by_id = prepare_process(self.filtered_projects, downsample=sample_num)
         if save:
             SaveBasic.save_basic(self.prepared_projects, 'prepared_project_data',
                                  path=self.data_fp, called='reshape_project')
 
         if hdf5:
-            save_hd5f(self.prepared_projects, fn='reshaped_data.h5',
-                      path=self.data_fp, called='reshape_project_h5')
+            save_hd5f(sample_num=sample_num)
 
     def cluster_project(self, char_roles=None, save=False):
         if char_roles != ['all'] and char_roles:
@@ -78,7 +77,8 @@ class MineStory:
             return -1
         for ac in active_clusters:
             self.role_clusters[ac] = cluster_process(self.prepared_projects, char_roles[ac],
-                                                     fp=self.data_fp, n_clusters=self.CLUSTER_NUM[ac])
+                                                     fp=self.data_fp, n_clusters=self.CLUSTER_NUM[ac],
+                                                     min_threshold=self.MIN_THRESHOLD[ac], plot_flag='cluster_result')
             if save:
                 SaveBasic.save_basic(self.role_clusters, '{}_clusters_data'.format(char_roles[ac]),
                                      path=self.data_fp, called='cluster_process:count_cluster')
@@ -93,11 +93,11 @@ class MineStory:
 
 def main():
     mine_story = MineStory(data_url="http://api.minestoryboard.com/get_projects_data")
-    mine_story.get_ori_project(save=True)
-    mine_story.filter_project(save=True)
-    mine_story.reshape_project(save=True, use_load=False, hdf5=False)
-    # mine_story.cluster_project(['all'], save=True)
-    mine_story.plot_project(p_id=332, guide=True)
+    # mine_story.get_ori_project(save=True)
+    # mine_story.filter_project(save=True)
+    mine_story.reshape_project(sample_num=40, save=True, use_load=True, hdf5=False)
+    mine_story.cluster_project(['all'], save=True)
+    # mine_story.plot_project(p_id=332, guide=True)
     pass
 
 

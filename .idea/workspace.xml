@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b8b0f32b-7119-4e73-a6a1-915f872f0076" name="Default Changelist" comment="" />
+    <list default="true" id="b8b0f32b-7119-4e73-a6a1-915f872f0076" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/MineStory_V2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MineStory_V2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extra/hd5f_data_preparation.py" beforeDir="false" afterPath="$PROJECT_DIR$/extra/hd5f_data_preparation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extra/movie_list.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/extra/movie_list.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/general/cluster.py" beforeDir="false" afterPath="$PROJECT_DIR$/general/cluster.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/general/movies.py" beforeDir="false" afterPath="$PROJECT_DIR$/general/movies.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mprocess/cluster_process.py" beforeDir="false" afterPath="$PROJECT_DIR$/mprocess/cluster_process.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +25,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1XhESk2ZzyqJfYLUSAdVTa1hZkP" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -22,9 +36,32 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager" selected="Python.main">
+    <configuration name="hd5f_data_preparation" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="MineStory_V2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/extra" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/extra/hd5f_data_preparation.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MineStory_V2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -89,6 +126,7 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.hd5f_data_preparation" />
       <item itemvalue="Python.main" />
       <item itemvalue="Python.movie_selection" />
       <item itemvalue="Python.side_test" />
@@ -96,6 +134,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.hd5f_data_preparation" />
         <item itemvalue="Python.movie_selection" />
         <item itemvalue="Python.side_test" />
       </list>
@@ -123,68 +162,72 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="673" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1581640476484" />
-    <state width="1545" height="466" key="DebuggerActiveHint" timestamp="1585628096496">
+    <state width="1545" height="466" key="DebuggerActiveHint" timestamp="1588200702700">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1236" height="370" key="DebuggerActiveHint/0.0.1536.824/1920.43.1920.1040@0.0.1536.824" timestamp="1584646867668" />
     <state width="1236" height="370" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1583259197739" />
-    <state width="1545" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1585628096496" />
-    <state x="0" y="523" key="FileChooserDialogImpl" timestamp="1581489975138">
+    <state width="1545" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1588200702700" />
+    <state x="0" y="523" key="FileChooserDialogImpl" timestamp="1587942178627">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="0" y="523" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1581489975138" />
-    <state width="1515" height="442" key="GridCell.Tab.0.bottom" timestamp="1586890875697">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="0" y="523" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1587942178627" />
+    <state width="1307" height="262" key="GridCell.Tab.0.bottom" timestamp="1588201834728">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1515" height="309" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.43.1920.1040@0.0.1536.824" timestamp="1584647128386" />
     <state width="1515" height="442" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586890875697" />
-    <state width="1899" height="217" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585628219062" />
-    <state width="1515" height="442" key="GridCell.Tab.0.center" timestamp="1586890875697">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1307" height="262" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588201834728" />
+    <state width="1307" height="262" key="GridCell.Tab.0.center" timestamp="1588201834728">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1515" height="309" key="GridCell.Tab.0.center/0.0.1536.824/1920.43.1920.1040@0.0.1536.824" timestamp="1584647128386" />
     <state width="1515" height="442" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1586890875697" />
-    <state width="1899" height="217" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585628219062" />
-    <state width="1515" height="442" key="GridCell.Tab.0.left" timestamp="1586890875697">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1307" height="262" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588201834728" />
+    <state width="1307" height="262" key="GridCell.Tab.0.left" timestamp="1588201834727">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1515" height="309" key="GridCell.Tab.0.left/0.0.1536.824/1920.43.1920.1040@0.0.1536.824" timestamp="1584647128386" />
     <state width="1515" height="442" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1586890875697" />
-    <state width="1899" height="217" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585628219062" />
-    <state width="1515" height="442" key="GridCell.Tab.0.right" timestamp="1586890875697">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1307" height="262" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588201834727" />
+    <state width="1307" height="262" key="GridCell.Tab.0.right" timestamp="1588201834728">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1515" height="309" key="GridCell.Tab.0.right/0.0.1536.824/1920.43.1920.1040@0.0.1536.824" timestamp="1584647128386" />
     <state width="1515" height="442" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1586890875697" />
-    <state width="1899" height="217" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585628219062" />
-    <state width="1515" height="228" key="GridCell.Tab.1.bottom" timestamp="1586890851003">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1307" height="262" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588201834728" />
+    <state width="1307" height="251" key="GridCell.Tab.1.bottom" timestamp="1588201766920">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1515" height="309" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.43.1920.1040@0.0.1536.824" timestamp="1584647128386" />
     <state width="1515" height="228" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586890851003" />
-    <state width="1899" height="409" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585628219058" />
-    <state width="1515" height="228" key="GridCell.Tab.1.center" timestamp="1586890851002">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1307" height="251" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588201766920" />
+    <state width="1307" height="251" key="GridCell.Tab.1.center" timestamp="1588201766920">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1515" height="309" key="GridCell.Tab.1.center/0.0.1536.824/1920.43.1920.1040@0.0.1536.824" timestamp="1584647128386" />
     <state width="1515" height="228" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1586890851002" />
-    <state width="1899" height="409" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585628219058" />
-    <state width="1515" height="228" key="GridCell.Tab.1.left" timestamp="1586890851002">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1307" height="251" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588201766920" />
+    <state width="1307" height="251" key="GridCell.Tab.1.left" timestamp="1588201766920">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1515" height="309" key="GridCell.Tab.1.left/0.0.1536.824/1920.43.1920.1040@0.0.1536.824" timestamp="1584647128386" />
     <state width="1515" height="228" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1586890851002" />
-    <state width="1899" height="409" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585628219058" />
-    <state width="1515" height="228" key="GridCell.Tab.1.right" timestamp="1586890851002">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1307" height="251" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588201766920" />
+    <state width="1307" height="251" key="GridCell.Tab.1.right" timestamp="1588201766920">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1515" height="309" key="GridCell.Tab.1.right/0.0.1536.824/1920.43.1920.1040@0.0.1536.824" timestamp="1584647128386" />
     <state width="1515" height="228" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1586890851002" />
-    <state width="1899" height="409" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585628219058" />
-    <state x="0" y="325" key="SettingsEditor" timestamp="1581489994455">
+    <state width="1307" height="251" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588201766920" />
+    <state x="535" y="67" key="SettingsEditor" timestamp="1587942188950">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="0" y="325" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1581489994455" />
+    <state x="535" y="67" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1587942188950" />
+    <state x="654" y="264" width="672" height="678" key="search.everywhere.popup" timestamp="1587105809596">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="654" y="264" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1587105809596" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -201,11 +244,6 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main/main.py</url>
-          <line>99</line>
-          <option name="timeStamp" value="76" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main/main.py</url>
           <line>89</line>
           <option name="timeStamp" value="79" />
         </line-breakpoint>
@@ -214,7 +252,37 @@
           <line>57</line>
           <option name="timeStamp" value="80" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/extra/hd5f_data_preparation.py</url>
+          <line>71</line>
+          <option name="timeStamp" value="82" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/extra/hd5f_data_preparation.py</url>
+          <line>192</line>
+          <option name="timeStamp" value="113" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/extra/hd5f_data_preparation.py</url>
+          <line>202</line>
+          <option name="timeStamp" value="114" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/general/cluster.py</url>
+          <line>50</line>
+          <option name="timeStamp" value="119" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/general/cluster.py</url>
+          <line>22</line>
+          <option name="timeStamp" value="121" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="negative[298].down_sample_status" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

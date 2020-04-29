@@ -99,7 +99,6 @@ class Movie:
 
         pass
 
-
     def down_sample_strict(self, n=100):
         resample_len = self.resample_status.shape[-1]
         adder = int(resample_len/n)
@@ -120,7 +119,7 @@ class Movie:
 
                 if len(turing_point_x) > n:
                     print('n < turning point, unable to down sample {}, try other n'.format(self.p_id))
-                #     return
+                    # return
                 fit_turning_point = [-1 for x in range(n)]
                 fited_turing_point = [(False, 0) for x in range(n)]
                 priority_order = []
@@ -146,6 +145,8 @@ class Movie:
                     lv_index = get_index_positions(turing_point_y, lvl)
                     for i in lv_index:
                         index = int(turing_point_x[i] * n)
+                        if index == 28:
+                            index = 27
                         if not fited_turing_point[index][0]:
                             fit_turning_point[index] = turing_point_y[i]
                             fited_turing_point[index] = (True, turing_point_x[i])
