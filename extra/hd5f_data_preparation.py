@@ -206,5 +206,21 @@ def main(sample_num=15):
     pass
 
 
+def selected_main(selected_list, sample_num=15):
+    from datetime import date
+    date = date.today()
+    data_fp = 'data/{}/'.format(date)
+    all_project = LoadBasic.load_basic('prepared_project_data', path=data_fp)
+    selected_project = {}
+    for p_id in all_project.keys():
+        if p_id in selected_list:
+            selected_project[p_id] = all_project[p_id]
+    negative, neutral, positive = DataHelper.split_project_by_score(selected_project, 6, 7.5)
+    DataHelper.create_data(negative, sample_num, label=0, path=data_fp, save=True)
+    DataHelper.create_data(neutral, sample_num, label=1, path=data_fp, save=True)
+    DataHelper.create_data(positive, sample_num, label=2, path=data_fp, save=True)
+    pass
+
+
 if __name__ == '__main__':
     main()

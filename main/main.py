@@ -2,12 +2,14 @@ import os
 from datetime import date
 from pathlib import Path
 from extra.hd5f_data_preparation import main as save_hd5f
+from extra.hd5f_data_preparation import selected_main as selected_save_hd5f
 from general.save_load import SaveBasic, LoadBasic
 from general import tools
 from mprocess.filter_process import process as filter_process
 from mprocess.prepare_process import process as prepare_process
 from mprocess.cluster_process import process as cluster_process
 from mprocess.plot_process import process as plot_process
+from mprocess.data_selection_process import process as data_selection_process
 
 
 class MineStory:
@@ -22,7 +24,7 @@ class MineStory:
     role_clusters = {}
 
     char_roles_index = {"MainCharacter": 0, "Supporter": 1, "Opposites": 2}
-    CLUSTER_NUM = [[25, 15, 10, 10, 5], [15, 8, 8, 8, 8], [5, 5, 5, 5, 5]]
+    CLUSTER_NUM = [[25, 15, 15, 15, 15], [10, 10, 10, 10, 10], [10, 10, 10, 10, 10]]
     MIN_THRESHOLD = [[3, 3, 3, 3, 3], [5, 5, 5, 5, 5], [5, 5, 5, 5, 5]]
 
     def __init__(self, data_url=None, data_path=None):
@@ -65,7 +67,7 @@ class MineStory:
         if hdf5:
             save_hd5f(sample_num=sample_num)
 
-    def cluster_project(self, char_roles=None, save=False):
+    def cluster_project(self, char_roles=None, plot_flag=None, save=False):
         if char_roles != ['all'] and char_roles:
             active_clusters = []
             for char in char_roles:
@@ -78,10 +80,19 @@ class MineStory:
         for ac in active_clusters:
             self.role_clusters[ac] = cluster_process(self.prepared_projects, char_roles[ac],
                                                      fp=self.data_fp, n_clusters=self.CLUSTER_NUM[ac],
-                                                     min_threshold=self.MIN_THRESHOLD[ac], plot_flag='cluster_result')
+                                                     min_threshold=self.MIN_THRESHOLD[ac], plot_flag=plot_flag)
             if save:
-                SaveBasic.save_basic(self.role_clusters, '{}_clusters_data'.format(char_roles[ac]),
+                SaveBasic.save_basic(self.role_clusters[ac], '{}_clusters_data'.format(char_roles[ac]),
                                      path=self.data_fp, called='cluster_process:count_cluster')
+        SaveBasic.save_basic(self.role_clusters, 'all_clusters_data',
+                             path=self.data_fp, called='cluster_process:count_cluster')
+
+    def select_project(self, min_movies_in_cluster, sample_num=15, hdf5=None):
+        self.role_clusters = LoadBasic.load_basic('all_clusters_data', path=self.data_fp, called='select_project')
+        project_list = data_selection_process(min_movies_in_cluster, self.role_clusters)
+        if hdf5:
+            selected_save_hd5f(project_list, sample_num=sample_num)
+        pass
 
     def plot_project(self, p_id=None, char_roles=None, down_sample=True, guide=False):
         self.prepared_projects = LoadBasic.load_basic('prepared_project_data', path=self.data_fp, called='plot_project')
@@ -92,12 +103,24 @@ class MineStory:
 
 
 def main():
+    # get data (json format) by url
     mine_story = MineStory(data_url="http://api.minestoryboard.com/get_projects_data")
-    # mine_story.get_ori_project(save=True)
+    mine_story.get_ori_project(save=True)
+
+    # filter out the broken data
     # mine_story.filter_project(save=True)
+
+    # reshape the data into designed format
     mine_story.reshape_project(sample_num=40, save=True, use_load=True, hdf5=False)
-    mine_story.cluster_project(['all'], save=True)
+
+    # use k-mean to cluster each character role status, the result store in data/plot_data/{character_role}
+    # mine_story.cluster_project(['all'], plot_flag='cluster_result', save=True)
+
+    # plot single project result, the result store in data/single_movie/{project_id}
     # mine_story.plot_project(p_id=332, guide=True)
+
+    # select better data
+    mine_story.select_project(min_movies_in_cluster=3, sample_num=40, hdf5=True)
     pass
 
 
